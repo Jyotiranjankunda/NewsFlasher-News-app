@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './FetchData.css';
+// import dotenv from "dotenv";
+
+// dotenv.config();
 
 const FetchData = ({ type }) => {
   const [data, setData] = useState([]);
@@ -8,9 +11,10 @@ const FetchData = ({ type }) => {
 
   const fetchData = async () => {
     try {
+      const apiKey = import.meta.env.VITE_API_KEY;
       const url = type
-        ? `https://newsapi.org/v2/top-headlines?country=in&category=${type}&apiKey=28df1762137c4ee6b77f29d8cb745a25`
-        : "https://newsapi.org/v2/top-headlines?country=in&apiKey=28df1762137c4ee6b77f29d8cb745a25";
+        ? `https://newsapi.org/v2/top-headlines?country=in&category=${type}&apiKey=${apiKey}`
+        : `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
       const response = await axios.get(url);
       setData(response.data.articles);
       setLoading(false);
