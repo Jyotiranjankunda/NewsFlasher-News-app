@@ -1,0 +1,60 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Add a z-index to ensure the navbar stays on top of other elements */
+}
+
+.changeColor li {
+    position: relative;
+}
+
+.changeColor li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: aqua;
+    transition: width 0.3s ease;
+}
+
+.changeColor li:hover::before {
+    width: 100%;
+}
+
+/* Styles for screen sizes between 481px and 768px (inclusive) */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .navbar-brand {
+        font-size: 2rem; /* Reduce font size for the brand text */
+    }
+
+    .navbar-toggler {
+        margin-right: 0; /* Adjust spacing for the toggler button */
+    }
+
+    .changeColor li {
+        padding: 0.5rem; /* Reduce padding for list items */
+    }
+
+    .changeColor li a {
+        font-size: 1rem; /* Reduce font size for list item links */
+    }
+}
+
+/* Styles for screen sizes up to 480px */
+@media screen and (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1.5rem; /* Further reduce font size for the brand text */
+    }
+
+    .changeColor li {
+        padding: 0.3rem; /* Further reduce padding for list items */
+    }
+
+    .changeColor li a {
+        font-size: 0.9rem; /* Further reduce font size for list item links */
+    }
+}

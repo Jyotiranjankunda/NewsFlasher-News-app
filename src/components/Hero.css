@@ -1,0 +1,53 @@
+.hero-div{
+    height: 50vh;
+    background-image: url('../Images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero-div h1{
+    font-family: "Zilla Slab", serif; 
+    font-size: 3.5rem;
+}
+
+.hero-div h5{
+    font-size: 1.5rem;
+    color: aliceblue;
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .hero-div {
+        padding: 1rem; 
+        /* height: 40vh; */
+    }
+
+    .hero-div h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-div h5 {
+        font-size: 1.2rem; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-div {
+        padding: 0.5rem;
+        /* height: 30vh; */
+    }
+
+    .hero-div h1 {
+        font-size: 2rem; 
+    }
+
+    .hero-div h5 {
+        font-size: 1rem; 
+    }
+}
